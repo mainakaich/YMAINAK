@@ -1,0 +1,46 @@
+managed implementation in class ZBP_R_YMA_STOCK unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_YMA_STOCK alias ZrYmaStock
+persistent table yma_stock
+draft table zyma_stock_d
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+
+{
+  field ( readonly )
+  Id,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt;
+
+  field ( numbering : managed )
+  Id;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  static action CalculateStockAmount deep parameter YA_MA_PRODUCT_ROOT result [1] ya_ma_product_stock_amount;
+
+  mapping for yma_stock
+    {
+      Id            = id;
+      ProductId     = product_id;
+      Price         = price;
+      Stock         = stock;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+}

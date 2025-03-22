@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_YMA_STOCK'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_YMA_STOCK'
+  }
+}
+define service ZUI_YMA_STOCK_O4 provider contracts odata_v4_ui {
+  expose ZC_YMA_STOCK;
+}

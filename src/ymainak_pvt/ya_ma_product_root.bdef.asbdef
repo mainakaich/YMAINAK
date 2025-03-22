@@ -1,0 +1,12 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+
+define behavior for YA_MA_PRODUCT_ROOT //alias <alias_name>
+{
+  association _product;
+}
+
+define behavior for YA_MA_PRODUCT_TABLE
+{
+}
