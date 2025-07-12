@@ -5,7 +5,8 @@ CLASS ycl_maiinak_console DEFINITION
 
   PUBLIC SECTION.
 
-    INTERFACES if_oo_adt_classrun .
+    INTERFACES if_oo_adt_classrun.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
     DATA mv_att TYPE abap_boolean.

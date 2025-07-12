@@ -9,6 +9,8 @@
 }
 define view entity YI_Mainak_Booking
   as select from ymainak_booking
+  association [1..1] to YI_Mainak_Travel as _Travel 
+  on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid          as BookingUuid,
       travel_uuid           as TravelUuid,
@@ -23,5 +25,6 @@ define view entity YI_Mainak_Booking
       currency_code         as CurrencyCode,
       created_by            as CreatedBy,
       last_changed_by       as LastChangedBy,
-      local_last_changed_at as LocalLastChangedAt
+      local_last_changed_at as LocalLastChangedAt,
+      _Travel
 }

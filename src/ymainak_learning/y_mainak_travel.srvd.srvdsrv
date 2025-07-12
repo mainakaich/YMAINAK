@@ -1,0 +1,6 @@
+@EndUserText.label: 'Travel Service'
+@ObjectModel.leadingEntity.name: 'YC_Mainak_Travel'
+define service Y_MAINAK_TRAVEL {
+  expose YC_Mainak_Travel  as Travel;
+  expose YC_MAINAK_BOOKING as Booking;
+}

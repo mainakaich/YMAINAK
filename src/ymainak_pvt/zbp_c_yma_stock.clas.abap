@@ -1,8 +1,6 @@
 class ZBP_C_YMA_STOCK definition
   public
-  abstract
-  final
-  for behavior of ZC_YMA_STOCK .
+  create private .
 
 public section.
 protected section.
